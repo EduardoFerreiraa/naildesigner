@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giovanna Nails</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="shortcut icon" href="img/lixador-de-unha.png" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <i class="fas fa-paint-brush logo-icon"></i>
+                <h1>Giovanna Nails</h1>
+            </div>
+            
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            
+            <ul>
+                <li><a href="#sobre" class="active">Sobre mim</a></li>
+                <li><a href="#servicos">Serviços</a></li>
+                <li><a href="#unhas">Galeria</a></li>
+                <li><a href="#precos">Preços</a></li>
+                <li><a href="#agenda">Agenda</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div id="sobre">
+        <div class="sobre-texto">
+            <h1>Sobre mim</h1>
+            <p>Oii! Meu nome é Giovanna e estou começando agora minha jornada como nail designer. Sempre gostei de expressar minha criatividade de diferentes formas.</p>
+            
+            <p>Como sou iniciante, estou aprendendo e me aperfeiçoando a cada dia, buscando sempre trazer o melhor para quem me procura. Meu foco é sempre em criar algo que faça você se sentir ainda mais linda e confiante, seja com uma nail art super estilosa ou uma unha mais clássica e sofisticada.</p>
+            
+            <p>Minha paixão por unhas começou quando eu era adolescente. Sempre fui fascinada por cores, texturas e a forma como uma unha bem feita pode transformar a aparência e a confiança de uma pessoa.</p>
+            
+            <p>Decidi transformar essa paixão em profissão após receber diversos elogios dos meus amigos e familiares sobre minhas habilidades. Foi então que comecei a estudar técnicas profissionais e investir em materiais de qualidade.</p>
+            
+            <p>Acredito que cada cliente é única e merece um atendimento personalizado. Por isso, sempre dedico tempo para entender o que você deseja e oferecer sugestões que combinem com seu estilo e personalidade.</p>
+            
+        </div>
+        
+        <div class="sobre-imagem">
+            <img src="img/Imagem do WhatsApp de 2025-03-24 à(s) 22.57.19_b061b10c.jpg" alt="Minha foto">
+        </div>
+    </div>
+    
+    <div id="servicos">
+        <h1>Serviços</h1>
+        
+        <div class="servicos-container">
+            <div class="servico-card">
+                <div class="servico-icon">
+                    <i class="fas fa-paint-brush"></i>
+                </div>
+                <h2>Nail Art</h2>
+                <p>Designs exclusivos e personalizados para suas unhas. Trabalho com diferentes técnicas e materiais para criar a nail art perfeita para você.</p>
+                <ul class="servico-detalhes">
+                    <li>Adesivos e decalques</li>
+                    <li>Desenhos à mão livre</li>
+                    <li>Pedrarias e aplicações</li>
+                    <li>Efeitos especiais</li>
+                </ul>
+            </div>
+            
+            <div class="servico-card">
+                <div class="servico-icon">
+                    <i class="fas fa-gem"></i>
+                </div>
+                <h2>Alongamento</h2>
+                <p>Alongamentos de unhas com técnicas modernas e materiais de qualidade para um resultado natural e duradouro.</p>
+                <ul class="servico-detalhes">
+                    <li>Alongamento em gel</li>
+                    <li>Alongamento em acrílico</li>
+                    <li>Alongamento em fibra de vidro</li>
+                    <li>Manutenção de alongamentos</li>
+                </ul>
+            </div>
+            
+            <div class="servico-card">
+                <div class="servico-icon">
+                    <i class="fas fa-magic"></i>
+                </div>
+                <h2>Esmaltação em Gel</h2>
+                <p>Esmaltação em gel para um acabamento perfeito e duradouro, com cores vibrantes que não descascam.</p>
+                <ul class="servico-detalhes">
+                    <li>Esmaltação em gel tradicional</li>
+                    <li>Francesinha permanente</li>
+                    <li>Efeitos especiais (cromado, matte)</li>
+                    <li>Remoção segura</li>
+                </ul>
+            </div>
+            
+            <div class="servico-card">
+                <div class="servico-icon">
+                    <i class="fas fa-spa"></i>
+                </div>
+                <h2>Manicure</h2>
+                <p>Tratamento completo para mãos e unhas, com hidratação, remoção de cutículas e esmaltação tradicional.</p>
+                <ul class="servico-detalhes">
+                    <li>Manicure tradicional</li>
+                    <li>Spa de mãos</li>
+                    <li>Tratamentos para cutículas</li>
+                    <li>Hidratação intensiva</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Seção Galeria -->
+    <div id="unhas">
+        <h1>Galeria</h1>
+        
+        <div class="galeria-filtros">
+            <button class="filtro-btn active" data-filter="all">Todos</button>
+            <button class="filtro-btn" data-filter="nail-art">Nail Art</button>
+            <button class="filtro-btn" data-filter="alongamento">Alongamento</button>
+            <button class="filtro-btn" data-filter="gel">Esmaltação em Gel</button>
+        </div>
+        
+        <div class="galeria-container">
+            <!-- Substitua os caminhos das imagens pelos seus arquivos reais -->
+            <div class="galeria-item" data-category="nail-art">
+                <img src="img/galeria1.jpg" alt="Nail Art Floral">
+                <div class="galeria-overlay">
+                    <h3>Nail Art Floral</h3>
+                    <p>Design delicado com flores</p>
+                </div>
+            </div>
+            
+            <div class="galeria-item" data-category="alongamento">
+                <img src="img/galeria2.jpg" alt="Alongamento em Gel">
+                <div class="galeria-overlay">
+                    <h3>Alongamento em Gel</h3>
+                    <p>Acabamento natural e elegante</p>
+                </div>
+            </div>
+            
+            <div class="galeria-item" data-category="gel">
+                <img src="img/galeria3.jpg" alt="Esmaltação em Gel Rosa">
+                <div class="galeria-overlay">
+                    <h3>Esmaltação em Gel</h3>
+                    <p>Tom rosa perolado</p>
+                </div>
+            </div>
+            
+            <div class="galeria-item" data-category="nail-art">
+                <img src="img/galeria4.jpg" alt="Nail Art Geométrica">
+                <div class="galeria-overlay">
+                    <h3>Nail Art Geométrica</h3>
+                    <p>Design moderno e minimalista</p>
+                </div>
+            </div>
+            
+            <div class="galeria-item" data-category="alongamento">
+                <img src="img/galeria5.jpg" alt="Alongamento Stiletto">
+                <div class="galeria-overlay">
+                    <h3>Alongamento Stiletto</h3>
+                    <p>Formato elegante e sofisticado</p>
+                </div>
+            </div>
+            
+            <div class="galeria-item" data-category="gel">
+                <img src="img/galeria6.jpg" alt="Francesinha em Gel">
+                <div class="galeria-overlay">
+                    <h3>Francesinha em Gel</h3>
+                    <p>Clássico atemporal</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Seção Preços -->
+    <div id="precos">
+        <h1>Preços</h1>
+        
+        <div class="precos-container">
+            <div class="preco-card">
+                <h2>Manicure Simples</h2>
+                <div class="preco-valor">R$ 35</div>
+                <ul class="preco-lista">
+                    <li>Limpeza das unhas</li>
+                    <li>Remoção de cutículas</li>
+                    <li>Esmaltação tradicional</li>
+                    <li>Hidratação básica</li>
+                </ul>
+                <a href="#agenda" class="preco-btn">Agendar</a>
+            </div>
+            
+            <div class="preco-card destaque">
+                <div class="preco-tag">Mais Popular</div>
+                <h2>Nail Art Completa</h2>
+                <div class="preco-valor">R$ 70</div>
+                <ul class="preco-lista">
+                    <li>Manicure completa</li>
+                    <li>Esmaltação em gel</li>
+                    <li>Design personalizado</li>
+                    <li>Aplicação de adesivos ou pedras</li>
+                    <li>Hidratação intensiva</li>
+                </ul>
+                <a href="#agenda" class="preco-btn">Agendar</a>
+            </div>
+            
+            <div class="preco-card">
+                <h2>Alongamento</h2>
+                <div class="preco-valor">R$ 120</div>
+                <ul class="preco-lista">
+                    <li>Alongamento em gel ou acrílico</li>
+                    <li>Modelagem personalizada</li>
+                    <li>Esmaltação em gel</li>
+                    <li>Design básico incluso</li>
+                    <li>Manutenção em 15 dias (50% off)</li>
+                </ul>
+                <a href="#agenda" class="preco-btn">Agendar</a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Seção Agenda -->
+    <div id="agenda">
+        <h1>Agenda</h1>
+        
+        <div class="agenda-container">
+            <div class="agenda-info">
+                <h2>Horários de Atendimento</h2>
+                <p>Agende seu horário e venha ficar ainda mais linda! Atendimento com hora marcada para sua comodidade.</p>
+                
+                <div class="horarios">
+                    <div class="horario-item">
+                        <div class="horario-dia">Segunda a Sexta</div>
+                        <div class="horario-horas">9h às 18h</div>
+                    </div>
+                    <div class="horario-item">
+                        <div class="horario-dia">Sábado</div>
+                        <div class="horario-horas">9h às 16h</div>
+                    </div>
+                    <div class="horario-item">
+                        <div class="horario-dia">Domingo</div>
+                        <div class="horario-horas">Fechado</div>
+                    </div>
+                </div>
+                
+                <a href="https://wa.me/5500000000000" class="agenda-btn whatsapp-btn">
+                    <i class="fab fa-whatsapp"></i> Agendar pelo WhatsApp
+                </a>
+            </div>
+            
+            <div class="agenda-form">
+                <h2>Solicitar Agendamento</h2>
+                <form id="form-agenda">
+                    <div class="form-group">
+                        <label for="nome">Nome</label>
+                        <input type="text" id="nome" class="form-control" placeholder="Seu nome completo" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="telefone">Telefone</label>
+                        <input type="tel" id="telefone" class="form-control" placeholder="(00) 00000-0000" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="servico">Serviço Desejado</label>
+                        <select id="servico" class="form-control" required>
+                            <option value="">Selecione um serviço</option>
+                            <option value="manicure">Manicure Simples</option>
+                            <option value="nail-art">Nail Art</option>
+                            <option value="alongamento">Alongamento</option>
+                            <option value="esmaltacao">Esmaltação em Gel</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="data">Data Preferencial</label>
+                        <input type="date" id="data" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="horario">Horário Preferencial</label>
+                        <select id="horario" class="form-control" required>
+                            <option value="">Selecione um horário</option>
+                            <option value="09:00">09:00</option>
+                            <option value="10:00">10:00</option>
+                            <option value="11:00">11:00</option>
+                            <option value="13:00">13:00</option>
+                            <option value="14:00">14:00</option>
+                            <option value="15:00">15:00</option>
+                            <option value="16:00">16:00</option>
+                            <option value="17:00">17:00</option>
+                        </select>
+                    </div>
+                    
+                    <button type="submit" class="agenda-btn">Solicitar Agendamento</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Seção Contato -->
+    <div id="contato">
+        <h1>Contato</h1>
+        
+        <div class="contato-container">
+            <div class="contato-info">
+                <h2>Informações de Contato</h2>
+                
+                <div class="contato-item">
+                    <div class="contato-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <div class="contato-texto">
+                        <h3>Telefone</h3>
+                        <p>(00) 00000-0000</p>
+                    </div>
+                </div>
+                
+                <div class="contato-item">
+                    <div class="contato-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="contato-texto">
+                        <h3>E-mail</h3>
+                        <p>contato@giovannanails.com</p>
+                    </div>
+                </div>
+                
+                <div class="contato-item">
+                    <div class="contato-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="contato-texto">
+                        <h3>Endereço</h3>
+                        <p>Rua das Unhas, 123<br>Bairro Beleza<br>Sua Cidade - Estado</p>
+                    </div>
+                </div>
+                
+                <h2>Redes Sociais</h2>
+                <div class="redes-sociais">
+                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-tiktok"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-pinterest"></i></a>
+                </div>
+            </div>
+            
+            <div class="contato-form">
+                <h2>Envie uma Mensagem</h2>
+                <form id="form-contato">
+                    <div class="form-group">
+                        <label for="contato-nome">Nome</label>
+                        <input type="text" id="contato-nome" class="form-control" placeholder="Seu nome" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="contato-email">E-mail</label>
+                        <input type="email" id="contato-email" class="form-control" placeholder="Seu e-mail" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="contato-assunto">Assunto</label>
+                        <input type="text" id="contato-assunto" class="form-control" placeholder="Assunto da mensagem" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="contato-mensagem">Mensagem</label>
+                        <textarea id="contato-mensagem" class="form-control" placeholder="Sua mensagem" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="contato-btn">Enviar Mensagem</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">Giovanna Nails</div>
+            
+            <div class="footer-links">
+                <a href="#sobre">Sobre</a>
+                <a href="#servicos">Serviços</a>
+                <a href="#unhas">Galeria</a>
+                <a href="#precos">Preços</a>
+                <a href="#agenda">Agenda</a>
+                <a href="#contato">Contato</a>
+            </div>
+            
+            <div class="footer-social">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-tiktok"></i></a>
+                <a href="#"><i class="fab fa-pinterest"></i></a>
+            </div>
+            
+            <div class="copyright">
+                &copy; 2024 Giovanna Nails. Todos os direitos reservados.
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Botão Voltar ao Topo -->
+    <a href="#" class="back-to-top">
+        <i class="fas fa-chevron-up"></i>
+    </a>
+    
+    <!-- JavaScript -->
+    <script>
+        // Menu Mobile Toggle
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navMenu = document.querySelector('nav ul');
+        
+        menuToggle.addEventListener('click', function() {
+            menuToggle.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+        
+        // Header Scroll Effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+        
+        // Filtro da Galeria
+        const filtrosBtns = document.querySelectorAll('.filtro-btn');
+        const galeriaItems = document.querySelectorAll('.galeria-item');
+        
+        filtrosBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                // Remove active class from all buttons
+                filtrosBtns.forEach(b => b.classList.remove('active'));
+                // Add active class to clicked button
+                this.classList.add('active');
+                
+                const filter = this.getAttribute('data-filter');
+                
+                galeriaItems.forEach(item => {
+                    if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+        
+        // Lightbox para a Galeria
+        galeriaItems.forEach(item => {
+            item.addEventListener('click', function() {
+                const imgSrc = this.querySelector('img').getAttribute('src');
+                const imgAlt = this.querySelector('img').getAttribute('alt');
+                
+                const lightbox = document.createElement('div');
+                lightbox.classList.add('lightbox');
+                
+                const lightboxContent = document.createElement('div');
+                lightboxContent.classList.add('lightbox-content');
+                
+                const img = document.createElement('img');
+                img.setAttribute('src', imgSrc);
+                img.setAttribute('alt', imgAlt);
+                img.classList.add('lightbox-img');
+                
+                const closeBtn = document.createElement('button');
+                closeBtn.classList.add('lightbox-close');
+                closeBtn.innerHTML = '&times;';
+                
+                lightboxContent.appendChild(img);
+                lightboxContent.appendChild(closeBtn);
+                lightbox.appendChild(lightboxContent);
+                document.body.appendChild(lightbox);
+                
+                setTimeout(() => {
+                    lightbox.classList.add('active');
+                }, 10);
+                
+                closeBtn.addEventListener('click', function() {
+                    lightbox.classList.remove('active');
+                    setTimeout(() => {
+                        document.body.removeChild(lightbox);
+                    }, 300);
+                });
+                
+                lightbox.addEventListener('click', function(e) {
+                    if (e.target === lightbox) {
+                        lightbox.classList.remove('active');
+                        setTimeout(() => {
+                            document.body.removeChild(lightbox);
+                        }, 300);
+                    }
+                });
+            });
+        });
+        
+        // Botão Voltar ao Topo
+        const backToTopBtn = document.querySelector('.back-to-top');
+        
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 300) {
+                backToTopBtn.classList.add('visible');
+            } else {
+                backToTopBtn.classList.remove('visible');
+            }
+        });
+        
+        backToTopBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Formulários
+        const formAgenda = document.getElementById('form-agenda');
+        const formContato = document.getElementById('form-contato');
+        
+        if (formAgenda) {
+            formAgenda.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Solicitação de agendamento enviada com sucesso! Entraremos em contato para confirmar.');
+                this.reset();
+            });
+        }
+        
+        if (formContato) {
+            formContato.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Mensagem enviada com sucesso! Responderemos em breve.');
+                this.reset();
+            });
+        }
+        
+        // Navegação Suave
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    // Fecha o menu mobile se estiver aberto
+                    if (navMenu.classList.contains('active')) {
+                        menuToggle.classList.remove('active');
+                        navMenu.classList.remove('active');
+                    }
+                    
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
