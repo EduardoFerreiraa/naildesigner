@@ -49,6 +49,83 @@
             opacity: 1;
             transform: translateY(0);
         }
+        
+        /* Estilo para o loader de envio de email */
+        .sending-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s, visibility 0.3s;
+        }
+        
+        .sending-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .sending-spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid #f3f3f3;
+            border-top: 5px solid #e83e8c;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        
+        .sending-message {
+            color: white;
+            margin-top: 20px;
+            font-size: 18px;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* Esconder o honeypot para evitar spam */
+        .honeypot {
+            display: none;
+        }
+        
+        /* Mensagem de sucesso */
+        .success-message {
+            display: none;
+            background-color: #d4edda;
+            color: #155724;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+            text-align: center;
+        }
+        
+        .success-message.show {
+            display: block;
+        }
+        
+        /* Mensagem de erro */
+        .error-message {
+            display: none;
+            background-color: #f8d7da;
+            color: #721c24;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+            text-align: center;
+        }
+        
+        .error-message.show {
+            display: block;
+        }
     </style>
 </head>
 <body>
@@ -188,17 +265,17 @@
                 <form id="form-agenda">
                     <div class="form-group">
                         <label for="nome">Nome</label>
-                        <input type="text" id="nome" class="form-control" placeholder="Seu nome completo" required>
+                        <input type="text" id="nome" name="nome" class="form-control" placeholder="Seu nome completo" required>
                     </div>
                     
                     <div class="form-group">
                         <label for="telefone">Telefone</label>
-                        <input type="tel" id="telefone" class="form-control" placeholder="(00) 00000-0000" required>
+                        <input type="tel" id="telefone" name="telefone" class="form-control" placeholder="(00) 00000-0000" required>
                     </div>
                     
                     <div class="form-group">
                         <label for="servico">Serviço Desejado</label>
-                        <select id="servico" class="form-control" required>
+                        <select id="servico" name="servico" class="form-control" required>
                             <option value="">Selecione um serviço</option>
                             <option value="postica">Postiça Realista</option>
                         </select>
@@ -206,12 +283,12 @@
                     
                     <div class="form-group">
                         <label for="data">Data Preferencial</label>
-                        <input type="date" id="data" class="form-control" required>
+                        <input type="date" id="data" name="data" class="form-control" required>
                     </div>
                     
                     <div class="form-group">
                         <label for="horario">Horário Preferencial</label>
-                        <select id="horario" class="form-control" required>
+                        <select id="horario" name="horario" class="form-control" required>
                             <option value="">Selecione um horário</option>
                             <option value="14:00">14:00</option>
                             <option value="15:00">15:00</option>
@@ -224,6 +301,12 @@
                     
                     <button type="submit" class="agenda-btn">Solicitar Agendamento</button>
                 </form>
+                <div id="agenda-success" class="success-message">
+                    Solicitação de agendamento enviada com sucesso! Entraremos em contato para confirmar.
+                </div>
+                <div id="agenda-error" class="error-message">
+                    Erro ao enviar solicitação. Por favor, tente novamente ou agende pelo WhatsApp.
+                </div>
             </div>
         </div>
     </div>
@@ -278,26 +361,32 @@
                 <form id="form-contato">
                     <div class="form-group">
                         <label for="contato-nome">Nome</label>
-                        <input type="text" id="contato-nome" class="form-control" placeholder="Seu nome" required>
+                        <input type="text" id="contato-nome" name="nome" class="form-control" placeholder="Seu nome" required>
                     </div>
                     
                     <div class="form-group">
                         <label for="contato-email">E-mail</label>
-                        <input type="email" id="contato-email" class="form-control" placeholder="Seu e-mail" required>
+                        <input type="email" id="contato-email" name="email" class="form-control" placeholder="Seu e-mail" required>
                     </div>
                     
                     <div class="form-group">
                         <label for="contato-assunto">Assunto</label>
-                        <input type="text" id="contato-assunto" class="form-control" placeholder="Assunto da mensagem" required>
+                        <input type="text" id="contato-assunto" name="assunto" class="form-control" placeholder="Assunto da mensagem" required>
                     </div>
                     
                     <div class="form-group">
                         <label for="contato-mensagem">Mensagem</label>
-                        <textarea id="contato-mensagem" class="form-control" placeholder="Sua mensagem" required></textarea>
+                        <textarea id="contato-mensagem" name="mensagem" class="form-control" placeholder="Sua mensagem" required></textarea>
                     </div>
                     
                     <button type="submit" class="contato-btn">Enviar Mensagem</button>
                 </form>
+                <div id="contato-success" class="success-message">
+                    Mensagem enviada com sucesso! Responderemos em breve.
+                </div>
+                <div id="contato-error" class="error-message">
+                    Erro ao enviar mensagem. Por favor, tente novamente ou entre em contato pelo WhatsApp.
+                </div>
             </div>
         </div>
     </div>
@@ -331,6 +420,14 @@
     <a href="#" class="back-to-top">
         <i class="fas fa-chevron-up"></i>
     </a>
+    
+    <!-- Overlay de envio de email -->
+    <div class="sending-overlay" id="sending-overlay">
+        <div class="sending-content">
+            <div class="sending-spinner"></div>
+            <div class="sending-message">Enviando mensagem...</div>
+        </div>
+    </div>
     
     <!-- JavaScript -->
     <script>
@@ -464,23 +561,146 @@
             });
         });
         
-        // Formulários
+        // Overlay de envio
+        const sendingOverlay = document.getElementById('sending-overlay');
+        
+        function showSendingOverlay() {
+            sendingOverlay.classList.add('active');
+        }
+        
+        function hideSendingOverlay() {
+            sendingOverlay.classList.remove('active');
+        }
+        
+        // Função para enviar formulário via fetch
+        async function submitFormToEmail(formData, formType) {
+            // Adicionar configurações do FormSubmit
+            formData.append('_subject', formType === 'agenda' ? 'Solicitação de Agendamento - Giovanna Nails' : 'Mensagem do Site - Giovanna Nails');
+            formData.append('_template', 'table');
+            formData.append('_captcha', 'false');
+            
+            try {
+                const response = await fetch('https://formsubmit.co/giovannaaraujobonifacio07@gmail.com', {
+                    method: 'POST',
+                    body: formData
+                });
+                
+                if (response.ok) {
+                    return { success: true };
+                } else {
+                    return { success: false, message: 'Erro ao enviar o formulário.' };
+                }
+            } catch (error) {
+                console.error('Erro ao enviar formulário:', error);
+                return { success: false, message: error.message };
+            }
+        }
+        
+        // Formulário de Agendamento
         const formAgenda = document.getElementById('form-agenda');
-        const formContato = document.getElementById('form-contato');
+        const agendaSuccess = document.getElementById('agenda-success');
+        const agendaError = document.getElementById('agenda-error');
         
         if (formAgenda) {
-            formAgenda.addEventListener('submit', function(e) {
+            formAgenda.addEventListener('submit', async function(e) {
                 e.preventDefault();
-                alert('Solicitação de agendamento enviada com sucesso! Entraremos em contato para confirmar.');
-                this.reset();
+                
+                // Esconder mensagens anteriores
+                agendaSuccess.classList.remove('show');
+                agendaError.classList.remove('show');
+                
+                // Mostrar overlay de envio
+                showSendingOverlay();
+                
+                // Criar FormData com os dados do formulário
+                const formData = new FormData(formAgenda);
+                
+                // Formatar a data para exibição
+                const dataInput = document.getElementById('data').value;
+                if (dataInput) {
+                    const dataObj = new Date(dataInput);
+                    const dataFormatada = dataObj.toLocaleDateString('pt-BR');
+                    formData.set('data', dataFormatada);
+                }
+                
+                // Enviar o formulário
+                const result = await submitFormToEmail(formData, 'agenda');
+                
+                // Esconder overlay de envio
+                hideSendingOverlay();
+                
+                if (result.success) {
+                    // Mostrar mensagem de sucesso
+                    agendaSuccess.classList.add('show');
+                    // Resetar o formulário
+                    formAgenda.reset();
+                    // Rolar até a mensagem de sucesso
+                    agendaSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    // Remover a mensagem após 5 segundos
+                    setTimeout(() => {
+                        agendaSuccess.classList.remove('show');
+                    }, 5000);
+                } else {
+                    // Mostrar mensagem de erro
+                    agendaError.textContent = result.message || 'Erro ao enviar solicitação. Por favor, tente novamente ou agende pelo WhatsApp.';
+                    agendaError.classList.add('show');
+                    // Rolar até a mensagem de erro
+                    agendaError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    // Remover a mensagem após 5 segundos
+                    setTimeout(() => {
+                        agendaError.classList.remove('show');
+                    }, 5000);
+                }
             });
         }
         
+        // Formulário de Contato
+        const formContato = document.getElementById('form-contato');
+        const contatoSuccess = document.getElementById('contato-success');
+        const contatoError = document.getElementById('contato-error');
+        
         if (formContato) {
-            formContato.addEventListener('submit', function(e) {
+            formContato.addEventListener('submit', async function(e) {
                 e.preventDefault();
-                alert('Mensagem enviada com sucesso! Responderemos em breve.');
-                this.reset();
+                
+                // Esconder mensagens anteriores
+                contatoSuccess.classList.remove('show');
+                contatoError.classList.remove('show');
+                
+                // Mostrar overlay de envio
+                showSendingOverlay();
+                
+                // Criar FormData com os dados do formulário
+                const formData = new FormData(formContato);
+                
+                // Enviar o formulário
+                const result = await submitFormToEmail(formData, 'contato');
+                
+                // Esconder overlay de envio
+                hideSendingOverlay();
+                
+                if (result.success) {
+                    // Mostrar mensagem de sucesso
+                    contatoSuccess.classList.add('show');
+                    // Resetar o formulário
+                    formContato.reset();
+                    // Rolar até a mensagem de sucesso
+                    contatoSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    // Remover a mensagem após 5 segundos
+                    setTimeout(() => {
+                        contatoSuccess.classList.remove('show');
+                    }, 5000);
+                } else {
+                    // Mostrar mensagem de erro
+                    contatoError.textContent = result.message || 'Erro ao enviar mensagem. Por favor, tente novamente ou entre em contato pelo WhatsApp.';
+                    contatoError.classList.add('show');
+                    // Rolar até a mensagem de erro
+                    contatoError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    // Remover a mensagem após 5 segundos
+                    setTimeout(() => {
+                        contatoError.classList.remove('show');
+                    }, 5000);
+                }
             });
         }
         
