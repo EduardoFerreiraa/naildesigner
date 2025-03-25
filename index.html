@@ -37,6 +37,18 @@
             max-width: 100%;
             box-sizing: border-box;
         }
+        
+        /* Animação de fade-in subindo */
+        .animate-fade-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        
+        .animate-fade-up.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
     </style>
 </head>
 <body>
@@ -64,7 +76,7 @@
         </nav>
     </header>
     
-    <div id="sobre">
+    <div id="sobre" class="animate-fade-up">
         <div class="sobre-texto">
             <h1>Sobre mim</h1>
             <p>Oii! Meu nome é Giovanna e estou começando agora minha jornada como nail designer. Sempre gostei de expressar minha criatividade de diferentes formas.</p>
@@ -84,7 +96,7 @@
         </div>
     </div>
     
-    <div id="servicos">
+    <div id="servicos" class="animate-fade-up">
         <h1>Serviço</h1>
         
         <div class="servicos-container">
@@ -106,7 +118,7 @@
     </div>
     
     <!-- Seção Galeria -->
-    <div id="unhas">
+    <div id="unhas" class="animate-fade-up">
         <h1>Galeria</h1>
         
         <div class="galeria-container">
@@ -122,7 +134,7 @@
     </div>
     
     <!-- Seção Preços -->
-    <div id="precos">
+    <div id="precos" class="animate-fade-up">
         <h1>Preço</h1>
         
         <div class="precos-container">
@@ -143,7 +155,7 @@
     </div>
     
     <!-- Seção Agenda -->
-    <div id="agenda">
+    <div id="agenda" class="animate-fade-up">
         <h1>Agenda</h1>
         
         <div class="agenda-container">
@@ -217,7 +229,7 @@
     </div>
     
     <!-- Seção Contato -->
-    <div id="contato">
+    <div id="contato" class="animate-fade-up">
         <h1>Contato</h1>
         
         <div class="contato-container">
@@ -291,7 +303,7 @@
     </div>
     
     <!-- Footer -->
-    <footer>
+    <footer class="animate-fade-up">
         <div class="footer-content">
             <div class="footer-logo">Giovanna Nails</div>
             
@@ -340,6 +352,27 @@
                 header.classList.remove('scrolled');
             }
         });
+        
+        // Animação de fade-in ao rolar
+        const animateElements = document.querySelectorAll('.animate-fade-up');
+        
+        function checkScroll() {
+            animateElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                // Se o elemento estiver visível na viewport
+                if (elementTop < windowHeight - 100) {
+                    element.classList.add('show');
+                }
+            });
+        }
+        
+        // Verifica os elementos quando a página carrega
+        window.addEventListener('load', checkScroll);
+        
+        // Verifica os elementos quando a página é rolada
+        window.addEventListener('scroll', checkScroll);
         
         // Filtro da Galeria
         const filtrosBtns = document.querySelectorAll('.filtro-btn');
