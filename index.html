@@ -7,6 +7,37 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="shortcut icon" href="img/lixador-de-unha.png" type="image/x-icon">
+    <!-- Correção para rolagem horizontal -->
+    <style>
+        /* Prevenir rolagem horizontal */
+        html, body {
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+        
+        /* Garantir que todos os elementos respeitem a largura da viewport */
+        img, div, form, .galeria-container, .contato-container, .agenda-container, .precos-container {
+            max-width: 100%;
+        }
+        
+        /* Ajustar imagens para não ultrapassarem seus contêineres */
+        img {
+            height: auto;
+            object-fit: contain;
+        }
+        
+        /* Garantir que textos longos não causem overflow */
+        p, h1, h2, h3, a, span, label {
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+        
+        /* Ajustar tabelas e elementos de formulário */
+        table, select, input, textarea {
+            max-width: 100%;
+            box-sizing: border-box;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -81,50 +112,10 @@
         <div class="galeria-container">
             <!-- Substitua os caminhos das imagens pelos seus arquivos reais -->
             <div class="galeria-item" data-category="nail-art">
-                <img src="img/galeria1.jpg" alt="Nail Art Floral">
+                <img src="img/Imagem do WhatsApp de 2025-03-25 à(s) 17.49.32_8158e8c2.jpg" alt="Nail Art Floral">
                 <div class="galeria-overlay">
-                    <h3>Nail Art Floral</h3>
-                    <p>Design delicado com flores</p>
-                </div>
-            </div>
-            
-            <div class="galeria-item" data-category="alongamento">
-                <img src="img/galeria2.jpg" alt="Alongamento em Gel">
-                <div class="galeria-overlay">
-                    <h3>Alongamento em Gel</h3>
-                    <p>Acabamento natural e elegante</p>
-                </div>
-            </div>
-            
-            <div class="galeria-item" data-category="gel">
-                <img src="img/galeria3.jpg" alt="Esmaltação em Gel Rosa">
-                <div class="galeria-overlay">
-                    <h3>Esmaltação em Gel</h3>
-                    <p>Tom rosa perolado</p>
-                </div>
-            </div>
-            
-            <div class="galeria-item" data-category="nail-art">
-                <img src="img/galeria4.jpg" alt="Nail Art Geométrica">
-                <div class="galeria-overlay">
-                    <h3>Nail Art Geométrica</h3>
-                    <p>Design moderno e minimalista</p>
-                </div>
-            </div>
-            
-            <div class="galeria-item" data-category="alongamento">
-                <img src="img/galeria5.jpg" alt="Alongamento Stiletto">
-                <div class="galeria-overlay">
-                    <h3>Alongamento Stiletto</h3>
-                    <p>Formato elegante e sofisticado</p>
-                </div>
-            </div>
-            
-            <div class="galeria-item" data-category="gel">
-                <img src="img/galeria6.jpg" alt="Francesinha em Gel">
-                <div class="galeria-overlay">
-                    <h3>Francesinha em Gel</h3>
-                    <p>Clássico atemporal</p>
+                    <h3>Nail art</h3>
+                    <p>Unhas com formatos diferentes</p>
                 </div>
             </div>
         </div>
@@ -215,7 +206,7 @@
                             <option value="16:00">16:00</option>
                             <option value="17:00">17:00</option>
                             <option value="18:00">18:00</option>
-                            <option value="17:00">19:00</option>
+                            <option value="19:00">19:00</option>
                         </select>
                     </div>
                     
@@ -249,7 +240,7 @@
                     </div>
                     <div class="contato-texto">
                         <h3>E-mail</h3>
-                        <p>giovannaaraujobonifacio07@gmail.com</p>
+                        <p>giovannaaraujobonifacio07@gmail<br>.com</p>
                     </div>
                 </div>
                 
@@ -259,7 +250,7 @@
                     </div>
                     <div class="contato-texto">
                         <h3>Endereço</h3>
-                        <p>Rua 21 de setembro, 259<br>Parque bitaru<br>São Vicente - São Paulo</p>
+                        <p>Rua vinte e um de setembro, 259<br>Parque bitaru<br>São Vicente - São Paulo</p>
                     </div>
                 </div>
                 
