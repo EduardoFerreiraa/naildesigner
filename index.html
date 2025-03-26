@@ -13,17 +13,39 @@
         html, body {
             max-width: 100%;
             overflow-x: hidden;
+            /* Impedir seleção de texto em todo o site */
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+        
+        /* Proteção de imagens contra download */
+        img {
+            -webkit-user-drag: none;
+            -khtml-user-drag: none;
+            -moz-user-drag: none;
+            -o-user-drag: none;
+            user-drag: none;
+            pointer-events: none; /* Impede cliques na imagem */
+            height: auto;
+            object-fit: contain;
+        }
+        
+        /* Remover a cor azul de seleção */
+        ::selection {
+            background: transparent;
+            color: inherit;
+        }
+        
+        ::-moz-selection {
+            background: transparent;
+            color: inherit;
         }
         
         /* Garantir que todos os elementos respeitem a largura da viewport */
         img, div, form, .galeria-container, .contato-container, .agenda-container, .precos-container {
             max-width: 100%;
-        }
-        
-        /* Ajustar imagens para não ultrapassarem seus contêineres */
-        img {
-            height: auto;
-            object-fit: contain;
         }
         
         /* Garantir que textos longos não causem overflow */
@@ -497,6 +519,7 @@
                 img.setAttribute('src', imgSrc);
                 img.setAttribute('alt', imgAlt);
                 img.classList.add('lightbox-img');
+                img.style.pointerEvents = 'none'; // Impede interações com a imagem no lightbox
                 
                 const closeBtn = document.createElement('button');
                 closeBtn.classList.add('lightbox-close');
@@ -713,6 +736,12 @@
                     });
                 }
             });
+        });
+        
+        // Desabilitar menu de contexto (botão direito) em todo o site
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+            return false;
         });
     </script>
 </body>
