@@ -126,6 +126,39 @@
         .error-message.show {
             display: block;
         }
+        
+        /* Estilo adicional para o botão de WhatsApp centralizado */
+        .agenda-whatsapp-container {
+            text-align: center;
+            margin: 30px auto;
+            max-width: 300px;
+        }
+        
+        .whatsapp-btn-large {
+            display: inline-block;
+            padding: 15px 30px;
+            font-size: 18px;
+            border-radius: 50px;
+            background-color: #25D366;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 20px auto;
+            width: 100%;
+            text-align: center;
+        }
+        
+        .whatsapp-btn-large:hover {
+            background-color: #128C7E;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+        
+        .whatsapp-btn-large i {
+            margin-right: 10px;
+            font-size: 20px;
+        }
     </style>
 </head>
 <body>
@@ -253,59 +286,14 @@
                         <div class="horario-horas">13h às 20h</div>
                     </div>
                 </div>
-                
-                <a href="https://wa.me/5513997106377" class="agenda-btn whatsapp-btn">
-                    <i class="fab fa-whatsapp"></i> Agendar pelo WhatsApp
-                </a>
             </div>
             
-            <div class="agenda-form">
-                <h2>Solicitar Agendamento</h2>
-                <form id="form-agenda">
-                    <div class="form-group">
-                        <label for="nome">Nome</label>
-                        <input type="text" id="nome" name="nome" class="form-control" placeholder="Seu nome completo" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="telefone">Telefone</label>
-                        <input type="tel" id="telefone" name="telefone" class="form-control" placeholder="(00) 00000-0000" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="servico">Serviço Desejado</label>
-                        <select id="servico" name="servico" class="form-control" required>
-                            <option value="">Selecione um serviço</option>
-                            <option value="postica">Postiça Realista</option>
-                        </select>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="data">Data Preferencial</label>
-                        <input type="date" id="data" name="data" class="form-control" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="horario">Horário Preferencial</label>
-                        <select id="horario" name="horario" class="form-control" required>
-                            <option value="">Selecione um horário</option>
-                            <option value="14:00">14:00</option>
-                            <option value="15:00">15:00</option>
-                            <option value="16:00">16:00</option>
-                            <option value="17:00">17:00</option>
-                            <option value="18:00">18:00</option>
-                            <option value="19:00">19:00</option>
-                        </select>
-                    </div>
-                    
-                    <button type="submit" class="agenda-btn">Solicitar Agendamento</button>
-                </form>
-                <div id="agenda-success" class="success-message">
-                    Solicitação de agendamento enviada com sucesso! Entraremos em contato para confirmar.
-                </div>
-                <div id="agenda-error" class="error-message">
-                    Erro ao enviar solicitação. Por favor, tente novamente ou agende pelo WhatsApp.
-                </div>
+            <!-- Botão de WhatsApp centralizado e destacado -->
+            <div class="agenda-whatsapp-container">
+                <p>Para agendar seu horário, entre em contato pelo WhatsApp:</p>
+                <a href="https://wa.me/5513997106377" class="whatsapp-btn-large">
+                    <i class="fab fa-whatsapp"></i> Agendar pelo WhatsApp
+                </a>
             </div>
         </div>
     </div>
