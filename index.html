@@ -181,6 +181,113 @@
             margin-right: 10px;
             font-size: 20px;
         }
+
+        /* Estilos para a seção FAQ */
+.faq-section {
+    padding: 30px 15px;
+    max-width: 800px;
+    margin: 0 auto 40px;
+}
+
+.faq-section h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #ffffff;
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.faq-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.faq-item {
+    border: 1px solid #f0d4e0;
+    border-radius: 10px;
+    overflow: hidden;
+    background: white;
+    box-shadow: 0 3px 10px rgba(232, 62, 140, 0.1);
+    transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(232, 62, 140, 0.15);
+}
+
+.faq-question {
+    padding: 18px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    background: #fff;
+    transition: all 0.3s;
+}
+
+.faq-question:hover {
+    background-color: #fdf4f8;
+}
+
+.faq-question span {
+    font-weight: 500;
+    color: #333;
+    font-size: 16px;
+}
+
+.faq-question i {
+    transition: transform 0.3s;
+    color: #e83e8c;
+    font-size: 14px;
+}
+
+.faq-item.active .faq-question {
+    background-color: #fdf4f8;
+}
+
+.faq-item.active .faq-question i {
+    transform: rotate(180deg);
+}
+
+.faq-answer {
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease-out;
+    background-color: #fff;
+}
+
+.faq-answer p {
+    margin: 0;
+    color: #666;
+    line-height: 1.6;
+    font-size: 15px;
+}
+
+.faq-item.active .faq-answer {
+    padding: 15px 20px;
+    max-height: 300px;
+}
+
+@media (max-width: 768px) {
+    .faq-section {
+        padding: 20px 10px;
+    }
+    
+    .faq-section h2 {
+        font-size: 24px;
+    }
+    
+    .faq-question span {
+        font-size: 15px;
+    }
+    
+    .faq-answer p {
+        font-size: 14px;
+    }
+}
     </style>
 </head>
 <body>
@@ -400,6 +507,95 @@
         </div>
     </div>
     
+    <!-- Botão Voltar ao Topo -->
+    <a href="#" class="back-to-top">
+        <i class="fas fa-chevron-up"></i>
+    </a>
+    
+    <!-- Overlay de envio de email -->
+    <div class="sending-overlay" id="sending-overlay">
+        <div class="sending-content">
+            <div class="sending-spinner"></div>
+            <div class="sending-message">Enviando mensagem...</div>
+        </div>
+    </div>
+
+    <!-- Seção de Perguntas Frequentes -->
+<div class="faq-section">
+    <h2>Perguntas Frequentes</h2>
+    <div class="faq-container">
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>Quanto tempo dura o atendimento?</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                <p>O atendimento dura em média 1h30 a 2h, dependendo do serviço escolhido e da complexidade do design.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>Qual o tempo de tolerância para atrasos?</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                <p>A tolerância para atrasos é de 15 minutos. Após esse período, o atendimento ficará sujeito à disponibilidade do horário.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>Como faço para remarcar ou cancelar?</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                <p>Para remarcar ou cancelar, entre em contato pelo WhatsApp com no mínimo 2 horas de antecedência. Cancelamentos sem aviso prévio podem estar sujeitos a taxa na próxima visita.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>Qual a durabilidade das unhas?</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                <p>A durabilidade média é de 15 a 20 dias, dependendo dos cuidados e do crescimento natural das suas unhas. Para maior durabilidade, evite usar as unhas como ferramentas e utilize luvas para tarefas domésticas.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>Preciso trazer algum material?</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                <p>Não é necessário trazer nenhum material. Todo o material utilizado é fornecido por mim e é de alta qualidade para garantir o melhor resultado.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>É possível fazer nail art personalizada?</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                <p>Sim! Adoro criar designs personalizados. Você pode trazer referências ou ideias e conversamos sobre as possibilidades.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>Como devo preparar minhas unhas antes do atendimento?</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                <p>O ideal é vir com as unhas limpas e sem esmalte. Se estiver removendo um gel ou acrílico anterior, evite danificar a unha natural. Em caso de dúvidas, entre em contato antes do seu horário.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
     <!-- Footer -->
     <footer class="animate-fade-up">
         <div class="footer-content">
@@ -424,19 +620,6 @@
             </div>
         </div>
     </footer>
-    
-    <!-- Botão Voltar ao Topo -->
-    <a href="#" class="back-to-top">
-        <i class="fas fa-chevron-up"></i>
-    </a>
-    
-    <!-- Overlay de envio de email -->
-    <div class="sending-overlay" id="sending-overlay">
-        <div class="sending-content">
-            <div class="sending-spinner"></div>
-            <div class="sending-message">Enviando mensagem...</div>
-        </div>
-    </div>
     
     <!-- JavaScript -->
     <script>
@@ -743,6 +926,30 @@
             e.preventDefault();
             return false;
         });
+
+        // Script para funcionalidade de acordeão do FAQ
+document.addEventListener('DOMContentLoaded', function() {
+    const faqItems = document.querySelectorAll('.faq-item');
+    
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        
+        question.addEventListener('click', () => {
+            // Verifica se este item já está ativo
+            const isActive = item.classList.contains('active');
+            
+            // Fecha todos os itens
+            faqItems.forEach(faqItem => {
+                faqItem.classList.remove('active');
+            });
+            
+            // Se o item clicado não estava ativo, abre-o
+            if (!isActive) {
+                item.classList.add('active');
+            }
+        });
+    });
+});
     </script>
 </body>
 </html>
