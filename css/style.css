@@ -1082,7 +1082,7 @@ nav ul li a.active::after {
     font-size: 20px;
 }
 
-/* Seção Contato */
+/* Seção Contato - Modificada para remover o formulário */
 #contato {
     color: white;
     padding: 120px 25px 50px;
@@ -1116,14 +1116,13 @@ nav ul li a.active::after {
 
 .contato-container {
     display: flex;
-    flex-wrap: wrap;
-    gap: 40px;
+    justify-content: center;
     margin-top: 50px;
 }
 
 .contato-info {
-    flex: 1;
-    min-width: 300px;
+    max-width: 600px;
+    width: 100%;
 }
 
 .contato-info h2 {
@@ -1188,6 +1187,34 @@ nav ul li a.active::after {
 .social-link:hover {
     transform: translateY(-5px);
     background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+}
+
+/* Responsividade para a seção de contato */
+@media (max-width: 768px) {
+    #contato {
+        padding-top: 150px;
+    }
+    
+    .contato-info {
+        padding: 0 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .contato-item {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .contato-icon {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+    
+    .redes-sociais {
+        justify-content: center;
+    }
 }
 
 .contato-form {
