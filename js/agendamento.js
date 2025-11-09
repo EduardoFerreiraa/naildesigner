@@ -6,16 +6,14 @@ const STORAGE_KEY = 'studioNailsBookingsV1';
 
 // Gera slots de 30min entre 09:00 e 18:00
 function generateSlots() {
-  const start = 9 * 60; // minutos
-  const end = 18 * 60;
-  const step = 30;
-  const slots = [];
-  for (let m = start; m <= end; m += step) {
-    const h = Math.floor(m / 60).toString().padStart(2, '0');
-    const mm = (m % 60).toString().padStart(2, '0');
-    slots.push(`${h}:${mm}`);
-  }
-  return slots;
+  // Retorna apenas os horários fixos solicitados
+  return [
+    '09:00',
+    '11:00',
+    '13:00',
+    '15:00',
+    '17:30'
+  ];
 }
 
 function getTodayISO() {
