@@ -4,16 +4,18 @@ const BUSINESS_NAME = 'Studio Nails';
 const WHATS_PHONE = '5513997106377'; // Número da Giovanna
 const STORAGE_KEY = 'studioNailsBookingsV1';
 
+// Lista de todos os horários disponíveis
+const ALL_SLOTS = [
+  '09:00', '09:30', '10:00', '10:30', '11:00',
+  '14:30', '15:00', '15:30', '16:00', '16:30', '17:00', '17:30'
+];
+
+// Duração do serviço em minutos
+const SERVICE_DURATION = 150; // 2 horas e 30 minutos
+
 // Gera slots de 30min entre 09:00 e 18:00
 function generateSlots() {
-  // Retorna apenas os horários fixos solicitados
-  return [
-    '09:00',
-    '11:00',
-    '13:00',
-    '15:00',
-    '17:30'
-  ];
+  return ALL_SLOTS;
 }
 
 function getTodayISO() {
@@ -71,8 +73,29 @@ function isValidPhone(phone) {
   return digits.length >= 10;
 }
 
+// Modifica a função isSlotBooked para verificar conflitos de horário
 function isSlotBooked(date, time) {
-  return bookings.some(b => b.date === date && b.time === time);
+  // Converte o horário selecionado para minutos desde o início do dia
+  const selectedTimeInMinutes = convertTimeToMinutes(time);
+  
+  return bookings.some(booking => {
+    if (booking.date !== date) return false;
+    
+    const bookedTimeInMinutes = convertTimeToMinutes(booking.time);
+    
+    // Verifica se o horário selecionado está dentro do período de algum agendamento existente
+    // ou se algum agendamento existente afetaria o horário selecionado
+    return (selectedTimeInMinutes >= bookedTimeInMinutes && 
+            selectedTimeInMinutes < bookedTimeInMinutes + SERVICE_DURATION) ||
+           (selectedTimeInMinutes + SERVICE_DURATION > bookedTimeInMinutes && 
+            selectedTimeInMinutes <= bookedTimeInMinutes + SERVICE_DURATION);
+  });
+}
+
+// Função auxiliar para converter horário em minutos
+function convertTimeToMinutes(time) {
+  const [hours, minutes] = time.split(':').map(Number);
+  return hours * 60 + minutes;
 }
 
 function handleSubmit(e) {
@@ -122,12 +145,14 @@ function handleSubmit(e) {
   window.open(whatsappUrl, '_blank');
 }
 
+// Atualiza a função renderSlots para mostrar os slots ocupados
 function renderSlots() {
   const date = dateInput.value || getTodayISO();
   const slots = generateSlots();
   const html = slots.map(s => {
     const booked = isSlotBooked(date, s);
-    return `<button type="button" class="slot ${booked ? 'booked' : 'available'}" data-time="${s}" ${booked ? 'disabled' : ''}>${s}</button>`;
+    return `<button type="button" class="slot ${booked ? 'booked' : 'available'}" 
+            data-time="${s}" ${booked ? 'disabled' : ''}>${s}</button>`;
   }).join('');
   slotsEl.innerHTML = html;
 
